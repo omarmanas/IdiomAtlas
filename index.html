@@ -1,746 +1,571 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-
-  <title>Idioms Atlas</title>
-
-  <meta
-    name="description"
-    content="Idioms Atlas is a comparative cultural-language project exploring Turkish, English, and Lithuanian idioms through meaning, metaphor, and human stories."
-  />
-
-  <style>
-    :root {
-      --navy: #061725;
-      --gold: #c89b45;
-      --gold-soft: #e3c57a;
-      --paper: #efe6d2;
-      --paper-2: #f7f0e2;
-      --ink: #17202a;
-      --green: #123d30;
-      --border: rgba(200,155,69,0.40);
-    }
-
-    * {
-      box-sizing: border-box;
-      margin: 0;
-      padding: 0;
-    }
-
-    html {
-      scroll-behavior: smooth;
-    }
-
-    body {
-      font-family: Georgia, "Times New Roman", serif;
-      background: var(--paper);
-      color: var(--ink);
-      line-height: 1.6;
-    }
-
-    img {
-      max-width: 100%;
-      display: block;
-    }
-
-    a {
-      text-decoration: none;
-      color: inherit;
-    }
-
-    .container {
-      width: min(1180px, 92%);
-      margin: 0 auto;
-    }
-
-    header {
-      background: rgba(3, 12, 20, 0.72);
-      border-bottom: 1px solid rgba(200,155,69,0.28);
-      position: sticky;
-      top: 0;
-      z-index: 50;
-      backdrop-filter: blur(10px);
-      -webkit-backdrop-filter: blur(10px);
-    }
-
-    .nav {
-      min-height: 82px;
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      gap: 24px;
-    }
-
-    .brand {
-      display: flex;
-      align-items: center;
-      gap: 14px;
-      color: var(--gold-soft);
-    }
-
-    .brand img {
-      width: 56px;
-      height: 56px;
-      border-radius: 50%;
-      object-fit: cover;
-    }
-
-    .brand-title {
-      font-size: 1.55rem;
-      letter-spacing: 0.08em;
-      text-transform: uppercase;
-      line-height: 1.1;
-    }
-
-    .brand-subtitle {
-      font-size: 0.72rem;
-      letter-spacing: 0.14em;
-      text-transform: uppercase;
-      color: #d7bd7c;
-    }
-
-    nav {
-      display: flex;
-      gap: 28px;
-      color: #f5ead2;
-      font-family: Arial, sans-serif;
-      font-size: 0.82rem;
-      text-transform: uppercase;
-      letter-spacing: 0.04em;
-    }
-
-    nav a {
-      padding-bottom: 6px;
-      border-bottom: 1px solid transparent;
-      transition: 0.2s ease;
-    }
-
-    nav a:hover {
-      color: var(--gold-soft);
-      border-color: var(--gold);
-    }
-
-    .hero {
-      position: relative;
-      min-height: 680px;
-      background:
-        linear-gradient(
-          90deg,
-          rgba(3, 8, 14, 0.94) 0%,
-          rgba(3, 8, 14, 0.80) 32%,
-          rgba(3, 8, 14, 0.48) 62%,
-          rgba(3, 8, 14, 0.22) 100%
-        ),
-        url("banner.png") center center / cover no-repeat;
-      color: #f5f5f5;
-      display: flex;
-      align-items: center;
-      border-bottom: 1px solid var(--border);
-    }
-
-    .hero-content {
-      width: min(620px, 92%);
-      padding: 0;
-      background: transparent;
-      border: none;
-      box-shadow: none;
-    }
-
-    .eyebrow {
-      color: var(--gold-soft);
-      text-transform: uppercase;
-      letter-spacing: 0.18em;
-      font-size: 0.92rem;
-      margin-bottom: 18px;
-      text-shadow: 0 2px 8px rgba(0,0,0,0.65);
-    }
-
-    h1 {
-      font-size: clamp(4.2rem, 7vw, 6.4rem);
-      line-height: 0.9;
-      letter-spacing: 0.03em;
-      text-transform: uppercase;
-      margin-bottom: 22px;
-      color: #f6eddc;
-      text-shadow:
-        0 3px 8px rgba(0,0,0,0.85),
-        0 10px 28px rgba(0,0,0,0.65);
-    }
-
-    .divider {
-      width: 320px;
-      height: 1px;
-      background: var(--gold);
-      margin: 18px 0 24px;
-    }
-
-    .hero p {
-      max-width: 520px;
-      font-family: Arial, sans-serif;
-      font-size: 1.12rem;
-      line-height: 1.7;
-      color: #f5f5f5;
-      text-shadow: 0 2px 8px rgba(0,0,0,0.65);
-      margin-bottom: 28px;
-    }
-
-    .button-row {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 14px;
-    }
-
-    .btn {
-      display: inline-block;
-      padding: 13px 24px;
-      border: 1.5px solid var(--gold);
-      background: rgba(18, 61, 48, 0.92);
-      color: #fff7e6;
-      text-transform: uppercase;
-      letter-spacing: 0.08em;
-      font-size: 0.84rem;
-      transition: all 0.22s ease;
-      text-align: center;
-      box-shadow: 0 6px 18px rgba(0,0,0,0.28);
-    }
-
-    .btn:hover {
-      background: var(--gold);
-      color: #061725;
-      transform: translateY(-2px);
-      box-shadow: 0 10px 24px rgba(0,0,0,0.38);
-    }
-
-    .btn.secondary {
-      background: rgba(6,23,37,0.42);
-    }
-
-    .btn.secondary:hover {
-      background: var(--gold);
-      color: #061725;
-    }
-
-    section {
-      padding: 76px 0;
-    }
-
-    .section-title {
-      font-size: 2rem;
-      text-transform: uppercase;
-      letter-spacing: 0.08em;
-      color: var(--navy);
-      margin-bottom: 22px;
-    }
-
-    .about-grid {
-      display: grid;
-      grid-template-columns: 180px 1fr 320px;
-      gap: 42px;
-      align-items: center;
-    }
-
-    .seal {
-      border-radius: 50%;
-      box-shadow: 0 12px 30px rgba(0,0,0,0.22);
-    }
-
-    .about-text p {
-      font-family: Arial, sans-serif;
-      margin-bottom: 14px;
-      color: #202a34;
-    }
-
-    .feature-list {
-      border-left: 1px solid rgba(24,32,42,0.18);
-      padding-left: 32px;
-      display: grid;
-      gap: 20px;
-      font-family: Arial, sans-serif;
-    }
-
-    .feature {
-      display: flex;
-      gap: 14px;
-      align-items: flex-start;
-    }
-
-    .icon {
-      width: 44px;
-      height: 44px;
-      border-radius: 50%;
-      background: var(--green);
-      color: var(--gold-soft);
-      display: grid;
-      place-items: center;
-      flex: 0 0 44px;
-      border: 1px solid var(--gold);
-      font-size: 1.1rem;
-    }
-
-    .books {
-      background:
-        linear-gradient(rgba(6,23,37,0.95), rgba(6,23,37,0.95)),
-        url("banner.png") center/cover no-repeat;
-      color: #fff7e6;
-    }
-
-    .books .section-title {
-      color: var(--gold-soft);
-      text-align: center;
-    }
-
-    .book-grid {
-      display: grid;
-      grid-template-columns: repeat(2, 1fr);
-      gap: 26px;
-      margin-top: 34px;
-    }
-
-    .book-card {
-      border: 1px solid var(--border);
-      background: rgba(5,13,20,0.74);
-      padding: 28px;
-      display: grid;
-      grid-template-columns: 190px 1fr;
-      gap: 26px;
-      align-items: center;
-      box-shadow: 0 16px 40px rgba(0,0,0,0.34);
-    }
-
-    .book-cover {
-      background: #e9e1d0;
-      min-height: 270px;
-      display: grid;
-      place-items: center;
-      color: #1a1a1a;
-      padding: 24px 18px;
-      text-align: center;
-      box-shadow: 12px 12px 0 rgba(255,255,255,0.12);
-      border: 1px solid rgba(0,0,0,0.12);
-    }
-
-    .book-cover h3 {
-      font-size: 1.45rem;
-      line-height: 1.15;
-      margin-bottom: 12px;
-    }
-
-    .book-cover small {
-      display: block;
-      font-size: 0.72rem;
-      margin-bottom: 18px;
-    }
-
-    .book-info h3 {
-      color: var(--gold-soft);
-      font-size: 1.8rem;
-      text-transform: uppercase;
-      letter-spacing: 0.06em;
-      margin-bottom: 12px;
-    }
-
-    .book-info p {
-      font-family: Arial, sans-serif;
-      color: #f1eadc;
-      margin-bottom: 18px;
-    }
-
-    .book-actions {
-      display: grid;
-      gap: 10px;
-      max-width: 220px;
-    }
-
-    .author-section {
-      background: var(--paper-2);
-    }
-
-    .author-grid {
-      display: grid;
-      grid-template-columns: 210px 1fr 360px;
-      gap: 42px;
-      align-items: center;
-    }
-
-    .author-photo {
-      width: 190px;
-      height: 190px;
-      border-radius: 50%;
-      object-fit: cover;
-      border: 3px solid var(--gold);
-      box-shadow: 0 12px 26px rgba(0,0,0,0.22);
-    }
-
-    .author-text p,
-    .review-box p {
-      font-family: Arial, sans-serif;
-      color: #202a34;
-      margin-bottom: 12px;
-    }
-
-    .review-box {
-      border: 1px solid rgba(24,32,42,0.18);
-      padding: 28px;
-      background: rgba(255,255,255,0.42);
-    }
-
-    .review-box h3 {
-      color: var(--navy);
-      text-transform: uppercase;
-      letter-spacing: 0.06em;
-      margin-bottom: 12px;
-    }
-
-    .contact {
-      background: #04111c;
-      color: #fff7e6;
-      text-align: center;
-    }
-
-    .contact h2 {
-      color: var(--gold-soft);
-    }
-
-    .contact p {
-      font-family: Arial, sans-serif;
-      max-width: 620px;
-      margin: 0 auto 24px;
-      color: #e7dfd0;
-    }
-
-    footer {
-      background: #04111c;
-      color: #c9b98d;
-      padding: 28px 0;
-      border-top: 1px solid var(--border);
-      font-family: Arial, sans-serif;
-      font-size: 0.9rem;
-    }
-
-    .footer-inner {
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      gap: 18px;
-      flex-wrap: wrap;
-    }
-
-    @media (max-width: 980px) {
-      .nav {
-        flex-direction: column;
-        padding: 18px 0;
-      }
-
-      nav {
-        flex-wrap: wrap;
-        justify-content: center;
-        gap: 16px;
-      }
-
-      .about-grid,
-      .author-grid {
-        grid-template-columns: 1fr;
-      }
-
-      .feature-list {
-        border-left: none;
-        padding-left: 0;
-      }
-
-      .book-grid {
-        grid-template-columns: 1fr;
-      }
-    }
-
-    @media (max-width: 680px) {
-      .hero {
-        min-height: 620px;
-      }
-
-      .book-card {
-        grid-template-columns: 1fr;
-      }
-
-      .book-cover {
-        min-height: 220px;
-      }
-
-      .brand-title {
-        font-size: 1.2rem;
-      }
-
-      h1 {
-        font-size: 3.6rem;
-      }
-    }
-  </style>
-</head>
-
-<body>
-
-  <header>
-    <div class="container nav">
-      <a class="brand" href="#home">
-        <img src="logo.png" alt="Idioms Atlas logo" />
-        <div>
-          <div class="brand-title">Idioms Atlas</div>
-          <div class="brand-subtitle">Travel the world through words</div>
-        </div>
-      </a>
-
-      <nav>
-        <a href="#home">Home</a>
-        <a href="#project">Project</a>
-        <a href="#books">Books</a>
-        <a href="#author">Author</a>
-        <a href="#contact">Contact</a>
-      </nav>
-    </div>
-  </header>
-
-  <main id="home">
-
-    <section class="hero">
-      <div class="container">
-        <div class="hero-content">
-          <div class="eyebrow">Turkish • English • Lithuanian</div>
-
-          <h1>
-            Idioms<br />
-            Atlas
-          </h1>
-
-          <div class="divider"></div>
-
-          <p>
-            A comparative cultural-language project exploring idioms,
-            meaning, metaphor, and human experience across Turkish,
-            English, and Lithuanian.
-          </p>
-
-          <div class="button-row">
-            <a class="btn" href="#books">View Books</a>
-            <a class="btn secondary" href="#contact">Request Review Copy</a>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <section id="project">
-      <div class="container about-grid">
-        <img class="seal" src="logo.png" alt="Idioms Atlas compass seal" />
-
-        <div class="about-text">
-          <h2 class="section-title">About the Project</h2>
-
-          <p>
-            Idioms Atlas compares how Turkish, English,
-            and Lithuanian express similar human experiences
-            in different ways.
-          </p>
-
-          <p>
-            Each idiom is explored through meaning,
-            metaphor, grammar notes, cultural nuance,
-            example sentences, and short human stories.
-          </p>
-
-          <p>
-            Sometimes languages share the same image.
-            Sometimes they see the world in a completely
-            different way. Both are valuable. Both are human.
-          </p>
-        </div>
-
-        <div class="feature-list">
-          <div class="feature">
-            <div class="icon">☰</div>
-            <div>Compare meanings and usage across three languages.</div>
-          </div>
-
-          <div class="feature">
-            <div class="icon">◎</div>
-            <div>Discover cultural nuance, metaphor, and context.</div>
-          </div>
-
-          <div class="feature">
-            <div class="icon">⌘</div>
-            <div>Learn through examples, notes, and real-life stories.</div>
-          </div>
-
-          <div class="feature">
-            <div class="icon">◇</div>
-            <div>A bridge between language learning and cultural reading.</div>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <section id="books" class="books">
-      <div class="container">
-        <h2 class="section-title">The Books</h2>
-
-        <div class="book-grid">
-
-          <article class="book-card">
-            <div class="book-cover">
-              <div>
-                <h3>Idioms Atlas</h3>
-                <small>Turkish, English, and Lithuanian Cultural Expressions</small>
-                <strong>VOLUME 1</strong>
-                <p>Mind, Shock, Courage, Time, and Survival</p>
-                <small>OMER MANAS</small>
-              </div>
-            </div>
-
-            <div class="book-info">
-              <h3>Volume 1</h3>
-
-              <p>Mind, Shock, Courage, Time, and Survival.</p>
-
-              <p>
-                Exploring how we think, react,
-                endure, and make sense of the world.
-              </p>
-
-              <div class="book-actions">
-                <a
-                  class="btn"
-                  href="https://www.amazon.com/dp/B0GZZY53G1"
-                  target="_blank"
-                  rel="noopener"
-                >
-                  Buy on Amazon
-                </a>
-
-                <a
-                  class="btn secondary"
-                  href="https://www.lulu.com/shop/omer-manas/idioms-atlas-volume-1/paperback/product-7kd2ykp.html?page=1&pageSize=4"
-                  target="_blank"
-                  rel="noopener"
-                >
-                  Buy on Lulu
-                </a>
-              </div>
-            </div>
-          </article>
-
-          <article class="book-card">
-            <div class="book-cover">
-              <div>
-                <h3>Idioms Atlas</h3>
-                <small>Turkish, English, and Lithuanian Cultural Expressions</small>
-                <strong>VOLUME 2</strong>
-                <p>Love, Anger, Fate, Speech, Trust, Home, and Nature</p>
-                <small>OMER MANAS</small>
-              </div>
-            </div>
-
-            <div class="book-info">
-              <h3>Volume 2</h3>
-
-              <p>
-                Love, Anger, Fate, Speech,
-                Trust, Home, and Nature.
-              </p>
-
-              <p>
-                Exploring how we feel,
-                relate, trust, belong,
-                and live in the world.
-              </p>
-
-              <div class="book-actions">
-                <a
-                  class="btn"
-                  href="https://www.amazon.com/TR-EN-LT-Idioms-Atlas-Speech-Nature/dp/B0H16GNFS7"
-                  target="_blank"
-                  rel="noopener"
-                >
-                  Buy on Amazon
-                </a>
-
-                <a
-                  class="btn secondary"
-                  href="https://www.lulu.com/shop/omer-manas/idioms-atlas-volume-2/paperback/product-57d52zp.html?page=1&pageSize=4"
-                  target="_blank"
-                  rel="noopener"
-                >
-                  Buy on Lulu
-                </a>
-              </div>
-            </div>
-          </article>
-
-        </div>
-      </div>
-    </section>
-
-    <section id="author" class="author-section">
-      <div class="container author-grid">
-        <img class="author-photo" src="author-photo.jpg" alt="Omer Manas" />
-
-        <div class="author-text">
-          <h2 class="section-title">About the Author</h2>
-
-          <p>
-            Omer Manas is a self-published author and
-            language enthusiast with a deep interest
-            in cultural expression, translation,
-            and the beauty of human communication.
-          </p>
-
-          <p>
-            After living in Lithuania for several years
-            and learning Lithuanian as a foreigner,
-            he became fascinated by how different
-            languages shape the way we think,
-            feel, and speak.
-          </p>
-        </div>
-
-        <div class="review-box">
-          <h3>Private Review Copies</h3>
-
-          <p>
-            Private PDF review copies are available
-            for educators, translators, researchers,
-            and language professionals upon request.
-          </p>
-
-          <a class="btn" href="mailto:omarmanas@gmail.com">
-            Contact the Author
-          </a>
-        </div>
-      </div>
-    </section>
-
-    <section id="contact" class="contact">
-      <div class="container">
-        <h2 class="section-title">Contact</h2>
-
-        <p>
-          For review copies, cultural-language collaboration,
-          interviews, or educational use,
-          contact the author directly.
-        </p>
-
-        <a class="btn" href="mailto:omarmanas@gmail.com">
-          Email the Author
-        </a>
-      </div>
-    </section>
-
-  </main>
-
-  <footer>
-    <div class="container footer-inner">
-      <div>Idioms Atlas</div>
-      <div>© 2026 Omer Manas. All rights reserved.</div>
-    </div>
-  </footer>
-
-</body>
-</html>
+<style>
+
+:root {
+  --navy: #061725;
+  --gold: #c89b45;
+  --gold-soft: #e3c57a;
+  --paper: #efe6d2;
+  --paper-2: #f7f0e2;
+  --ink: #17202a;
+  --green: #123d30;
+  --border: rgba(200,155,69,0.40);
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: Georgia, "Times New Roman", serif;
+  background: var(--paper);
+  color: var(--ink);
+  line-height: 1.6;
+}
+
+img {
+  max-width: 100%;
+  display: block;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+.container {
+  width: min(1180px, 92%);
+  margin: 0 auto;
+}
+
+/* =========================
+   HEADER
+========================= */
+
+header {
+  background: rgba(3, 12, 20, 0.72);
+  border-bottom: 1px solid rgba(200,155,69,0.28);
+  position: sticky;
+  top: 0;
+  z-index: 50;
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+}
+
+.nav {
+  min-height: 82px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 24px;
+}
+
+.brand {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  color: var(--gold-soft);
+}
+
+.brand img {
+  width: 56px;
+  height: 56px;
+  border-radius: 50%;
+  object-fit: cover;
+}
+
+.brand-title {
+  font-size: 1.55rem;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  line-height: 1.1;
+}
+
+.brand-subtitle {
+  font-size: 0.72rem;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: #d7bd7c;
+}
+
+nav {
+  display: flex;
+  gap: 28px;
+  color: #f5ead2;
+  font-family: Arial, sans-serif;
+  font-size: 0.82rem;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+}
+
+nav a {
+  padding-bottom: 6px;
+  border-bottom: 1px solid transparent;
+  transition: 0.2s ease;
+}
+
+nav a:hover {
+  color: var(--gold-soft);
+  border-color: var(--gold);
+}
+
+/* =========================
+   HERO
+========================= */
+
+.hero {
+
+  position: relative;
+
+  min-height: 720px;
+
+  background:
+    linear-gradient(
+      90deg,
+      rgba(3, 8, 14, 0.96) 0%,
+      rgba(3, 8, 14, 0.86) 28%,
+      rgba(3, 8, 14, 0.54) 58%,
+      rgba(3, 8, 14, 0.22) 100%
+    ),
+    url("banner.png") 62% center / cover no-repeat;
+
+  color: #f5f5f5;
+
+  display: flex;
+
+  align-items: flex-start;
+
+  padding-top: 120px;
+
+  border-bottom: 1px solid var(--border);
+
+  overflow: hidden;
+}
+
+.hero::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background:
+    radial-gradient(
+      circle at left center,
+      rgba(0,0,0,0.32),
+      transparent 55%
+    );
+  pointer-events: none;
+}
+
+.hero-content {
+
+  position: relative;
+
+  z-index: 2;
+
+  width: min(560px, 92%);
+
+  padding: 34px;
+
+  background: rgba(0,0,0,0.18);
+
+  backdrop-filter: blur(2px);
+
+  border: 1px solid rgba(255,255,255,0.05);
+
+  box-shadow:
+    0 14px 40px rgba(0,0,0,0.34);
+}
+
+.eyebrow {
+  color: var(--gold-soft);
+  text-transform: uppercase;
+  letter-spacing: 0.18em;
+  font-size: 0.92rem;
+  margin-bottom: 18px;
+  text-shadow: 0 2px 8px rgba(0,0,0,0.65);
+}
+
+h1 {
+
+  font-size: clamp(4.2rem, 7vw, 6.6rem);
+
+  line-height: 0.88;
+
+  letter-spacing: 0.03em;
+
+  text-transform: uppercase;
+
+  margin-bottom: 24px;
+
+  color: #f6eddc;
+
+  text-shadow:
+    0 4px 10px rgba(0,0,0,0.92),
+    0 12px 32px rgba(0,0,0,0.75);
+}
+
+.divider {
+  width: 320px;
+  height: 1px;
+  background: var(--gold);
+  margin: 18px 0 24px;
+}
+
+.hero p {
+
+  max-width: 520px;
+
+  font-family: Arial, sans-serif;
+
+  font-size: 1.08rem;
+
+  line-height: 1.8;
+
+  color: #f5f5f5;
+
+  text-shadow:
+    0 2px 8px rgba(0,0,0,0.72);
+
+  margin-bottom: 30px;
+}
+
+.button-row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 14px;
+}
+
+/* =========================
+   BUTTONS
+========================= */
+
+.btn {
+  display: inline-block;
+  padding: 13px 24px;
+  border: 1.5px solid var(--gold);
+  background: rgba(18, 61, 48, 0.92);
+  color: #fff7e6;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  font-size: 0.84rem;
+  transition: all 0.22s ease;
+  text-align: center;
+  box-shadow:
+    0 6px 18px rgba(0,0,0,0.28);
+}
+
+.btn:hover {
+  background: var(--gold);
+  color: #061725;
+  transform: translateY(-2px);
+  box-shadow:
+    0 10px 24px rgba(0,0,0,0.38);
+}
+
+.btn.secondary {
+  background: rgba(6,23,37,0.42);
+}
+
+.btn.secondary:hover {
+  background: var(--gold);
+  color: #061725;
+}
+
+/* =========================
+   GENERAL SECTIONS
+========================= */
+
+section {
+  padding: 76px 0;
+}
+
+.section-title {
+  font-size: 2rem;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  color: var(--navy);
+  margin-bottom: 22px;
+}
+
+/* =========================
+   ABOUT
+========================= */
+
+.about-grid {
+  display: grid;
+  grid-template-columns: 180px 1fr 320px;
+  gap: 42px;
+  align-items: center;
+}
+
+.seal {
+  border-radius: 50%;
+  box-shadow:
+    0 12px 30px rgba(0,0,0,0.22);
+}
+
+.about-text p {
+  font-family: Arial, sans-serif;
+  margin-bottom: 14px;
+  color: #202a34;
+}
+
+.feature-list {
+  border-left: 1px solid rgba(24,32,42,0.18);
+  padding-left: 32px;
+  display: grid;
+  gap: 20px;
+  font-family: Arial, sans-serif;
+}
+
+.feature {
+  display: flex;
+  gap: 14px;
+  align-items: flex-start;
+}
+
+.icon {
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+  background: var(--green);
+  color: var(--gold-soft);
+  display: grid;
+  place-items: center;
+  flex: 0 0 44px;
+  border: 1px solid var(--gold);
+  font-size: 1.1rem;
+}
+
+/* =========================
+   BOOKS
+========================= */
+
+.books {
+  background:
+    linear-gradient(rgba(6,23,37,0.95), rgba(6,23,37,0.95)),
+    url("banner.png") center/cover no-repeat;
+  color: #fff7e6;
+}
+
+.books .section-title {
+  color: var(--gold-soft);
+  text-align: center;
+}
+
+.book-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 26px;
+  margin-top: 34px;
+}
+
+.book-card {
+  border: 1px solid var(--border);
+  background: rgba(5,13,20,0.74);
+  padding: 28px;
+  display: grid;
+  grid-template-columns: 190px 1fr;
+  gap: 26px;
+  align-items: center;
+  box-shadow:
+    0 16px 40px rgba(0,0,0,0.34);
+}
+
+.book-cover {
+  background: #e9e1d0;
+  min-height: 270px;
+  display: grid;
+  place-items: center;
+  color: #1a1a1a;
+  padding: 24px 18px;
+  text-align: center;
+  box-shadow:
+    12px 12px 0 rgba(255,255,255,0.12);
+  border: 1px solid rgba(0,0,0,0.12);
+}
+
+.book-cover h3 {
+  font-size: 1.45rem;
+  line-height: 1.15;
+  margin-bottom: 12px;
+}
+
+.book-cover small {
+  display: block;
+  font-size: 0.72rem;
+  margin-bottom: 18px;
+}
+
+.book-info h3 {
+  color: var(--gold-soft);
+  font-size: 1.8rem;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  margin-bottom: 12px;
+}
+
+.book-info p {
+  font-family: Arial, sans-serif;
+  color: #f1eadc;
+  margin-bottom: 18px;
+}
+
+.book-actions {
+  display: grid;
+  gap: 10px;
+  max-width: 220px;
+}
+
+/* =========================
+   AUTHOR
+========================= */
+
+.author-section {
+  background: var(--paper-2);
+}
+
+.author-grid {
+  display: grid;
+  grid-template-columns: 210px 1fr 360px;
+  gap: 42px;
+  align-items: center;
+}
+
+.author-photo {
+  width: 190px;
+  height: 190px;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 3px solid var(--gold);
+  box-shadow:
+    0 12px 26px rgba(0,0,0,0.22);
+}
+
+.author-text p,
+.review-box p {
+  font-family: Arial, sans-serif;
+  color: #202a34;
+  margin-bottom: 12px;
+}
+
+.review-box {
+  border: 1px solid rgba(24,32,42,0.18);
+  padding: 28px;
+  background: rgba(255,255,255,0.42);
+}
+
+.review-box h3 {
+  color: var(--navy);
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  margin-bottom: 12px;
+}
+
+/* =========================
+   CONTACT
+========================= */
+
+.contact {
+  background: #04111c;
+  color: #fff7e6;
+  text-align: center;
+}
+
+.contact h2 {
+  color: var(--gold-soft);
+}
+
+.contact p {
+  font-family: Arial, sans-serif;
+  max-width: 620px;
+  margin: 0 auto 24px;
+  color: #e7dfd0;
+}
+
+/* =========================
+   FOOTER
+========================= */
+
+footer {
+  background: #04111c;
+  color: #c9b98d;
+  padding: 28px 0;
+  border-top: 1px solid var(--border);
+  font-family: Arial, sans-serif;
+  font-size: 0.9rem;
+}
+
+.footer-inner {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 18px;
+  flex-wrap: wrap;
+}
+
+/* =========================
+   RESPONSIVE
+========================= */
+
+@media (max-width: 980px) {
+
+  .nav {
+    flex-direction: column;
+    padding: 18px 0;
+  }
+
+  nav {
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 16px;
+  }
+
+  .about-grid,
+  .author-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .feature-list {
+    border-left: none;
+    padding-left: 0;
+  }
+
+  .book-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 680px) {
+
+  .hero {
+    min-height: 640px;
+    padding-top: 100px;
+  }
+
+  .hero-content {
+    padding: 26px;
+  }
+
+  .book-card {
+    grid-template-columns: 1fr;
+  }
+
+  .book-cover {
+    min-height: 220px;
+  }
+
+  .brand-title {
+    font-size: 1.2rem;
+  }
+
+  h1 {
+    font-size: 3.5rem;
+  }
+}
+
+</style>
