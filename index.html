@@ -12,7 +12,6 @@
   />
 
   <style>
-
     :root {
       --navy: #061725;
       --gold: #c89b45;
@@ -57,31 +56,20 @@
     }
 
     header {
-
-      background:
-        linear-gradient(
-          90deg,
-          rgba(3,12,20,0.96),
-          rgba(8,22,36,0.96)
-        );
-
-      border-bottom: 1px solid rgba(200,155,69,0.22);
-
+      background: rgba(3, 12, 20, 0.72);
+      border-bottom: 1px solid rgba(200,155,69,0.28);
       position: sticky;
       top: 0;
       z-index: 50;
-
-      backdrop-filter: blur(8px);
+      backdrop-filter: blur(10px);
+      -webkit-backdrop-filter: blur(10px);
     }
 
     .nav {
-
       min-height: 82px;
-
       display: flex;
       align-items: center;
       justify-content: space-between;
-
       gap: 24px;
     }
 
@@ -89,7 +77,6 @@
       display: flex;
       align-items: center;
       gap: 14px;
-
       color: var(--gold-soft);
     }
 
@@ -117,12 +104,9 @@
     nav {
       display: flex;
       gap: 28px;
-
       color: #f5ead2;
-
       font-family: Arial, sans-serif;
       font-size: 0.82rem;
-
       text-transform: uppercase;
       letter-spacing: 0.04em;
     }
@@ -139,71 +123,50 @@
     }
 
     .hero {
-
       position: relative;
-
       min-height: 680px;
-
       background:
         linear-gradient(
           90deg,
-          rgba(3, 8, 14, 0.92) 0%,
-          rgba(3, 8, 14, 0.72) 34%,
-          rgba(3, 8, 14, 0.30) 68%,
-          rgba(3, 8, 14, 0.18) 100%
+          rgba(3, 8, 14, 0.94) 0%,
+          rgba(3, 8, 14, 0.80) 32%,
+          rgba(3, 8, 14, 0.48) 62%,
+          rgba(3, 8, 14, 0.22) 100%
         ),
         url("banner.png") center center / cover no-repeat;
-
-      color: #fff7e6;
-
+      color: #f5f5f5;
       display: flex;
       align-items: center;
-
       border-bottom: 1px solid var(--border);
     }
 
     .hero-content {
-
       width: min(620px, 92%);
-
       padding: 0;
-
       background: transparent;
-
       border: none;
-
       box-shadow: none;
     }
 
     .eyebrow {
-
       color: var(--gold-soft);
-
       text-transform: uppercase;
-
       letter-spacing: 0.18em;
-
       font-size: 0.92rem;
-
       margin-bottom: 18px;
+      text-shadow: 0 2px 8px rgba(0,0,0,0.65);
     }
 
     h1 {
-
       font-size: clamp(4.2rem, 7vw, 6.4rem);
-
       line-height: 0.9;
-
       letter-spacing: 0.03em;
-
       text-transform: uppercase;
-
       margin-bottom: 22px;
-
       color: #f6eddc;
-
       text-shadow:
-        0 6px 22px rgba(0,0,0,0.72);
+        0 3px 8px rgba(0,0,0,0.85),
+        0 10px 28px rgba(0,0,0,0.65);
     }
 
     .divider {
@@ -214,17 +177,12 @@
     }
 
     .hero p {
-
       max-width: 520px;
-
       font-family: Arial, sans-serif;
-
       font-size: 1.12rem;
-
       line-height: 1.7;
-
-      color: rgba(255,245,230,0.92);
-
+      color: #f5f5f5;
+      text-shadow: 0 2px 8px rgba(0,0,0,0.65);
       margin-bottom: 28px;
     }
 
@@ -235,35 +193,33 @@
     }
 
     .btn {
-
       display: inline-block;
-
       padding: 13px 24px;
-
-      border: 1px solid var(--gold);
-
-      background: var(--green);
-
+      border: 1.5px solid var(--gold);
+      background: rgba(18, 61, 48, 0.92);
       color: #fff7e6;
-
       text-transform: uppercase;
-
       letter-spacing: 0.08em;
-
       font-size: 0.84rem;
-
-      transition: 0.2s ease;
-
+      transition: all 0.22s ease;
       text-align: center;
+      box-shadow: 0 6px 18px rgba(0,0,0,0.28);
     }
 
     .btn:hover {
       background: var(--gold);
       color: #061725;
+      transform: translateY(-2px);
+      box-shadow: 0 10px 24px rgba(0,0,0,0.38);
     }
 
     .btn.secondary {
-      background: rgba(6,23,37,0.35);
+      background: rgba(6,23,37,0.42);
+    }
+
+    .btn.secondary:hover {
+      background: var(--gold);
+      color: #061725;
     }
 
     section {
@@ -271,56 +227,36 @@
     }
 
     .section-title {
-
       font-size: 2rem;
-
       text-transform: uppercase;
-
       letter-spacing: 0.08em;
-
       color: var(--navy);
-
       margin-bottom: 22px;
     }
 
     .about-grid {
-
       display: grid;
-
       grid-template-columns: 180px 1fr 320px;
-
       gap: 42px;
-
       align-items: center;
     }
 
     .seal {
-
       border-radius: 50%;
-
-      box-shadow:
-        0 12px 30px rgba(0,0,0,0.22);
+      box-shadow: 0 12px 30px rgba(0,0,0,0.22);
     }
 
     .about-text p {
-
       font-family: Arial, sans-serif;
-
       margin-bottom: 14px;
-
       color: #202a34;
     }
 
     .feature-list {
-
       border-left: 1px solid rgba(24,32,42,0.18);
-
       padding-left: 32px;
-
       display: grid;
-
       gap: 20px;
-
       font-family: Arial, sans-serif;
     }
 
@@ -331,32 +267,22 @@
     }
 
     .icon {
-
       width: 44px;
       height: 44px;
-
       border-radius: 50%;
-
       background: var(--green);
-
       color: var(--gold-soft);
-
       display: grid;
       place-items: center;
-
       flex: 0 0 44px;
-
       border: 1px solid var(--gold);
-
       font-size: 1.1rem;
     }
 
     .books {
-
       background:
         linear-gradient(rgba(6,23,37,0.95), rgba(6,23,37,0.95)),
         url("banner.png") center/cover no-repeat;
-
       color: #fff7e6;
     }
 
@@ -366,54 +292,32 @@
     }
 
     .book-grid {
-
       display: grid;
-
       grid-template-columns: repeat(2, 1fr);
-
       gap: 26px;
-
       margin-top: 34px;
     }
 
     .book-card {
-
       border: 1px solid var(--border);
-
       background: rgba(5,13,20,0.74);
-
       padding: 28px;
-
       display: grid;
-
       grid-template-columns: 190px 1fr;
-
       gap: 26px;
-
       align-items: center;
-
-      box-shadow:
-        0 16px 40px rgba(0,0,0,0.34);
+      box-shadow: 0 16px 40px rgba(0,0,0,0.34);
     }
 
     .book-cover {
-
       background: #e9e1d0;
-
       min-height: 270px;
-
       display: grid;
       place-items: center;
-
       color: #1a1a1a;
-
       padding: 24px 18px;
-
       text-align: center;
-
-      box-shadow:
-        12px 12px 0 rgba(255,255,255,0.12);
-
+      box-shadow: 12px 12px 0 rgba(255,255,255,0.12);
       border: 1px solid rgba(0,0,0,0.12);
     }
 
@@ -430,24 +334,16 @@
     }
 
     .book-info h3 {
-
       color: var(--gold-soft);
-
       font-size: 1.8rem;
-
       text-transform: uppercase;
-
       letter-spacing: 0.06em;
-
       margin-bottom: 12px;
     }
 
     .book-info p {
-
       font-family: Arial, sans-serif;
-
       color: #f1eadc;
-
       margin-bottom: 18px;
     }
 
@@ -462,67 +358,44 @@
     }
 
     .author-grid {
-
       display: grid;
-
       grid-template-columns: 210px 1fr 360px;
-
       gap: 42px;
-
       align-items: center;
     }
 
     .author-photo {
-
       width: 190px;
       height: 190px;
-
       border-radius: 50%;
-
       object-fit: cover;
-
       border: 3px solid var(--gold);
-
-      box-shadow:
-        0 12px 26px rgba(0,0,0,0.22);
+      box-shadow: 0 12px 26px rgba(0,0,0,0.22);
     }
 
     .author-text p,
     .review-box p {
-
       font-family: Arial, sans-serif;
-
       color: #202a34;
-
       margin-bottom: 12px;
     }
 
     .review-box {
-
       border: 1px solid rgba(24,32,42,0.18);
-
       padding: 28px;
-
       background: rgba(255,255,255,0.42);
     }
 
     .review-box h3 {
-
       color: var(--navy);
-
       text-transform: uppercase;
-
       letter-spacing: 0.06em;
-
       margin-bottom: 12px;
     }
 
     .contact {
-
       background: #04111c;
-
       color: #fff7e6;
-
       text-align: center;
     }
 
@@ -531,46 +404,30 @@
     }
 
     .contact p {
-
       font-family: Arial, sans-serif;
-
       max-width: 620px;
-
       margin: 0 auto 24px;
-
       color: #e7dfd0;
     }
 
     footer {
-
       background: #04111c;
-
       color: #c9b98d;
-
       padding: 28px 0;
-
       border-top: 1px solid var(--border);
-
       font-family: Arial, sans-serif;
-
       font-size: 0.9rem;
     }
 
     .footer-inner {
-
       display: flex;
-
       justify-content: space-between;
-
       align-items: center;
-
       gap: 18px;
-
       flex-wrap: wrap;
     }
 
     @media (max-width: 980px) {
-
       .nav {
         flex-direction: column;
         padding: 18px 0;
@@ -598,7 +455,6 @@
     }
 
     @media (max-width: 680px) {
-
       .hero {
         min-height: 620px;
       }
@@ -619,35 +475,19 @@
         font-size: 3.6rem;
       }
     }
-
   </style>
 </head>
 
 <body>
 
   <header>
-
     <div class="container nav">
-
       <a class="brand" href="#home">
-
-        <img
-          src="logo.png"
-          alt="Idioms Atlas logo"
-        />
-
+        <img src="logo.png" alt="Idioms Atlas logo" />
         <div>
-
-          <div class="brand-title">
-            Idioms Atlas
-          </div>
-
-          <div class="brand-subtitle">
-            Travel the world through words
-          </div>
-
+          <div class="brand-title">Idioms Atlas</div>
+          <div class="brand-subtitle">Travel the world through words</div>
         </div>
-
       </a>
 
       <nav>
@@ -657,22 +497,15 @@
         <a href="#author">Author</a>
         <a href="#contact">Contact</a>
       </nav>
-
     </div>
-
   </header>
 
   <main id="home">
 
     <section class="hero">
-
       <div class="container">
-
         <div class="hero-content">
-
-          <div class="eyebrow">
-            Turkish • English • Lithuanian
-          </div>
+          <div class="eyebrow">Turkish • English • Lithuanian</div>
 
           <h1>
             Idioms<br />
@@ -688,38 +521,19 @@
           </p>
 
           <div class="button-row">
-
-            <a class="btn" href="#books">
-              View Books
-            </a>
-
-            <a class="btn secondary" href="#contact">
-              Request Review Copy
-            </a>
-
+            <a class="btn" href="#books">View Books</a>
+            <a class="btn secondary" href="#contact">Request Review Copy</a>
           </div>
-
         </div>
-
       </div>
-
     </section>
 
     <section id="project">
-
       <div class="container about-grid">
-
-        <img
-          class="seal"
-          src="logo.png"
-          alt="Idioms Atlas compass seal"
-        />
+        <img class="seal" src="logo.png" alt="Idioms Atlas compass seal" />
 
         <div class="about-text">
-
-          <h2 class="section-title">
-            About the Project
-          </h2>
+          <h2 class="section-title">About the Project</h2>
 
           <p>
             Idioms Atlas compares how Turkish, English,
@@ -738,11 +552,9 @@
             Sometimes they see the world in a completely
             different way. Both are valuable. Both are human.
           </p>
-
         </div>
 
         <div class="feature-list">
-
           <div class="feature">
             <div class="icon">☰</div>
             <div>Compare meanings and usage across three languages.</div>
@@ -762,55 +574,31 @@
             <div class="icon">◇</div>
             <div>A bridge between language learning and cultural reading.</div>
           </div>
-
         </div>
-
       </div>
-
     </section>
 
     <section id="books" class="books">
-
       <div class="container">
-
-        <h2 class="section-title">
-          The Books
-        </h2>
+        <h2 class="section-title">The Books</h2>
 
         <div class="book-grid">
 
           <article class="book-card">
-
             <div class="book-cover">
-
               <div>
-
                 <h3>Idioms Atlas</h3>
-
-                <small>
-                  Turkish, English, and Lithuanian Cultural Expressions
-                </small>
-
+                <small>Turkish, English, and Lithuanian Cultural Expressions</small>
                 <strong>VOLUME 1</strong>
-
-                <p>
-                  Mind, Shock, Courage,
-                  Time, and Survival
-                </p>
-
+                <p>Mind, Shock, Courage, Time, and Survival</p>
                 <small>OMER MANAS</small>
-
               </div>
-
             </div>
 
             <div class="book-info">
-
               <h3>Volume 1</h3>
 
-              <p>
-                Mind, Shock, Courage, Time, and Survival.
-              </p>
+              <p>Mind, Shock, Courage, Time, and Survival.</p>
 
               <p>
                 Exploring how we think, react,
@@ -818,11 +606,11 @@
               </p>
 
               <div class="book-actions">
-
                 <a
                   class="btn"
                   href="https://www.amazon.com/dp/B0GZZY53G1"
                   target="_blank"
+                  rel="noopener"
                 >
                   Buy on Amazon
                 </a>
@@ -831,44 +619,26 @@
                   class="btn secondary"
                   href="https://www.lulu.com/shop/omer-manas/idioms-atlas-volume-1/paperback/product-7kd2ykp.html?page=1&pageSize=4"
                   target="_blank"
+                  rel="noopener"
                 >
                   Buy on Lulu
                 </a>
-
               </div>
-
             </div>
-
           </article>
 
           <article class="book-card">
-
             <div class="book-cover">
-
               <div>
-
                 <h3>Idioms Atlas</h3>
-
-                <small>
-                  Turkish, English, and Lithuanian Cultural Expressions
-                </small>
-
+                <small>Turkish, English, and Lithuanian Cultural Expressions</small>
                 <strong>VOLUME 2</strong>
-
-                <p>
-                  Love, Anger, Fate,
-                  Speech, Trust,
-                  Home, and Nature
-                </p>
-
+                <p>Love, Anger, Fate, Speech, Trust, Home, and Nature</p>
                 <small>OMER MANAS</small>
-
               </div>
-
             </div>
 
             <div class="book-info">
-
               <h3>Volume 2</h3>
 
               <p>
@@ -883,11 +653,11 @@
               </p>
 
               <div class="book-actions">
-
                 <a
                   class="btn"
                   href="https://www.amazon.com/TR-EN-LT-Idioms-Atlas-Speech-Nature/dp/B0H16GNFS7"
                   target="_blank"
+                  rel="noopener"
                 >
                   Buy on Amazon
                 </a>
@@ -896,37 +666,24 @@
                   class="btn secondary"
                   href="https://www.lulu.com/shop/omer-manas/idioms-atlas-volume-2/paperback/product-57d52zp.html?page=1&pageSize=4"
                   target="_blank"
+                  rel="noopener"
                 >
                   Buy on Lulu
                 </a>
-
               </div>
-
             </div>
-
           </article>
 
         </div>
-
       </div>
-
     </section>
 
     <section id="author" class="author-section">
-
       <div class="container author-grid">
-
-        <img
-          class="author-photo"
-          src="author-photo.jpg"
-          alt="Omer Manas"
-        />
+        <img class="author-photo" src="author-photo.jpg" alt="Omer Manas" />
 
         <div class="author-text">
-
-          <h2 class="section-title">
-            About the Author
-          </h2>
+          <h2 class="section-title">About the Author</h2>
 
           <p>
             Omer Manas is a self-published author and
@@ -942,14 +699,10 @@
             languages shape the way we think,
             feel, and speak.
           </p>
-
         </div>
 
         <div class="review-box">
-
-          <h3>
-            Private Review Copies
-          </h3>
+          <h3>Private Review Copies</h3>
 
           <p>
             Private PDF review copies are available
@@ -957,26 +710,16 @@
             and language professionals upon request.
           </p>
 
-          <a
-            class="btn"
-            href="mailto:omarmanas@gmail.com"
-          >
+          <a class="btn" href="mailto:omarmanas@gmail.com">
             Contact the Author
           </a>
-
         </div>
-
       </div>
-
     </section>
 
     <section id="contact" class="contact">
-
       <div class="container">
-
-        <h2 class="section-title">
-          Contact
-        </h2>
+        <h2 class="section-title">Contact</h2>
 
         <p>
           For review copies, cultural-language collaboration,
@@ -984,33 +727,19 @@
           contact the author directly.
         </p>
 
-        <a
-          class="btn"
-          href="mailto:omarmanas@gmail.com"
-        >
+        <a class="btn" href="mailto:omarmanas@gmail.com">
           Email the Author
         </a>
-
       </div>
-
     </section>
 
   </main>
 
   <footer>
-
     <div class="container footer-inner">
-
-      <div>
-        Idioms Atlas
-      </div>
-
-      <div>
-        © 2026 Omer Manas. All rights reserved.
-      </div>
-
+      <div>Idioms Atlas</div>
+      <div>© 2026 Omer Manas. All rights reserved.</div>
     </div>
-
   </footer>
 
 </body>
