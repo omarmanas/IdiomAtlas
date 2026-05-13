@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
 
   <title>Idioms Atlas</title>
 
@@ -15,7 +15,6 @@
 
     :root {
       --navy: #061725;
-      --navy-2: #0b2132;
       --gold: #c89b45;
       --gold-soft: #e3c57a;
       --paper: #efe6d2;
@@ -58,6 +57,7 @@
     }
 
     header {
+
       background:
         linear-gradient(
           90deg,
@@ -65,7 +65,7 @@
           rgba(8,22,36,0.96)
         );
 
-      border-bottom: 1px solid rgba(200,155,69,0.24);
+      border-bottom: 1px solid rgba(200,155,69,0.22);
 
       position: sticky;
       top: 0;
@@ -75,7 +75,8 @@
     }
 
     .nav {
-      min-height: 84px;
+
+      min-height: 82px;
 
       display: flex;
       align-items: center;
@@ -93,14 +94,14 @@
     }
 
     .brand img {
-      width: 58px;
-      height: 58px;
+      width: 56px;
+      height: 56px;
       border-radius: 50%;
       object-fit: cover;
     }
 
     .brand-title {
-      font-size: 1.65rem;
+      font-size: 1.55rem;
       letter-spacing: 0.08em;
       text-transform: uppercase;
       line-height: 1.1;
@@ -138,17 +139,18 @@
     }
 
     .hero {
+
       position: relative;
 
-      min-height: 700px;
+      min-height: 680px;
 
       background:
         linear-gradient(
           90deg,
-          rgba(3, 8, 14, 0.88) 0%,
+          rgba(3, 8, 14, 0.92) 0%,
           rgba(3, 8, 14, 0.72) 34%,
-          rgba(3, 8, 14, 0.42) 58%,
-          rgba(3, 8, 14, 0.30) 100%
+          rgba(3, 8, 14, 0.30) 68%,
+          rgba(3, 8, 14, 0.18) 100%
         ),
         url("banner.png") center center / cover no-repeat;
 
@@ -162,23 +164,19 @@
 
     .hero-content {
 
-      width: min(560px, 92%);
+      width: min(620px, 92%);
 
-      padding: 42px;
+      padding: 0;
 
-      background: rgba(4, 10, 18, 0.34);
+      background: transparent;
 
-      backdrop-filter: blur(4px);
+      border: none;
 
-      border: 1px solid rgba(200,155,69,0.22);
-
-      box-shadow:
-        0 10px 40px rgba(0,0,0,0.35);
-
-      border-radius: 14px;
+      box-shadow: none;
     }
 
     .eyebrow {
+
       color: var(--gold-soft);
 
       text-transform: uppercase;
@@ -192,9 +190,9 @@
 
     h1 {
 
-      font-size: clamp(4.8rem, 8vw, 7.2rem);
+      font-size: clamp(4.2rem, 7vw, 6.4rem);
 
-      line-height: 0.88;
+      line-height: 0.9;
 
       letter-spacing: 0.03em;
 
@@ -205,7 +203,7 @@
       color: #f6eddc;
 
       text-shadow:
-        0 4px 18px rgba(0,0,0,0.62);
+        0 6px 22px rgba(0,0,0,0.72);
     }
 
     .divider {
@@ -221,7 +219,7 @@
 
       font-family: Arial, sans-serif;
 
-      font-size: 1.14rem;
+      font-size: 1.12rem;
 
       line-height: 1.7;
 
@@ -237,6 +235,7 @@
     }
 
     .btn {
+
       display: inline-block;
 
       padding: 13px 24px;
@@ -272,36 +271,54 @@
     }
 
     .section-title {
+
       font-size: 2rem;
+
       text-transform: uppercase;
+
       letter-spacing: 0.08em;
+
       color: var(--navy);
+
       margin-bottom: 22px;
     }
 
     .about-grid {
+
       display: grid;
+
       grid-template-columns: 180px 1fr 320px;
+
       gap: 42px;
+
       align-items: center;
     }
 
     .seal {
+
       border-radius: 50%;
-      box-shadow: 0 12px 30px rgba(0,0,0,0.22);
+
+      box-shadow:
+        0 12px 30px rgba(0,0,0,0.22);
     }
 
     .about-text p {
+
       font-family: Arial, sans-serif;
+
       margin-bottom: 14px;
+
       color: #202a34;
     }
 
     .feature-list {
+
       border-left: 1px solid rgba(24,32,42,0.18);
+
       padding-left: 32px;
 
       display: grid;
+
       gap: 20px;
 
       font-family: Arial, sans-serif;
@@ -314,6 +331,7 @@
     }
 
     .icon {
+
       width: 44px;
       height: 44px;
 
@@ -334,6 +352,7 @@
     }
 
     .books {
+
       background:
         linear-gradient(rgba(6,23,37,0.95), rgba(6,23,37,0.95)),
         url("banner.png") center/cover no-repeat;
@@ -347,7 +366,9 @@
     }
 
     .book-grid {
+
       display: grid;
+
       grid-template-columns: repeat(2, 1fr);
 
       gap: 26px;
@@ -364,6 +385,7 @@
       padding: 28px;
 
       display: grid;
+
       grid-template-columns: 190px 1fr;
 
       gap: 26px;
@@ -408,6 +430,7 @@
     }
 
     .book-info h3 {
+
       color: var(--gold-soft);
 
       font-size: 1.8rem;
@@ -420,8 +443,11 @@
     }
 
     .book-info p {
+
       font-family: Arial, sans-serif;
+
       color: #f1eadc;
+
       margin-bottom: 18px;
     }
 
@@ -436,7 +462,9 @@
     }
 
     .author-grid {
+
       display: grid;
+
       grid-template-columns: 210px 1fr 360px;
 
       gap: 42px;
@@ -461,8 +489,11 @@
 
     .author-text p,
     .review-box p {
+
       font-family: Arial, sans-serif;
+
       color: #202a34;
+
       margin-bottom: 12px;
     }
 
@@ -476,9 +507,13 @@
     }
 
     .review-box h3 {
+
       color: var(--navy);
+
       text-transform: uppercase;
+
       letter-spacing: 0.06em;
+
       margin-bottom: 12px;
     }
 
@@ -496,6 +531,7 @@
     }
 
     .contact p {
+
       font-family: Arial, sans-serif;
 
       max-width: 620px;
@@ -582,10 +618,6 @@
       h1 {
         font-size: 3.6rem;
       }
-
-      .hero-content {
-        padding: 28px;
-      }
     }
 
   </style>
@@ -594,18 +626,28 @@
 <body>
 
   <header>
+
     <div class="container nav">
 
       <a class="brand" href="#home">
-        <img src="logo.png" alt="Idioms Atlas logo" />
+
+        <img
+          src="logo.png"
+          alt="Idioms Atlas logo"
+        />
 
         <div>
-          <div class="brand-title">Idioms Atlas</div>
+
+          <div class="brand-title">
+            Idioms Atlas
+          </div>
 
           <div class="brand-subtitle">
             Travel the world through words
           </div>
+
         </div>
+
       </a>
 
       <nav>
@@ -617,6 +659,7 @@
       </nav>
 
     </div>
+
   </header>
 
   <main id="home">
@@ -679,14 +722,15 @@
           </h2>
 
           <p>
-            Idioms Atlas compares how Turkish, English, and Lithuanian
-            express similar human experiences in different ways.
+            Idioms Atlas compares how Turkish, English,
+            and Lithuanian express similar human experiences
+            in different ways.
           </p>
 
           <p>
-            Each idiom is explored through meaning, metaphor,
-            grammar notes, cultural nuance, example sentences,
-            and short human stories.
+            Each idiom is explored through meaning,
+            metaphor, grammar notes, cultural nuance,
+            example sentences, and short human stories.
           </p>
 
           <p>
@@ -769,8 +813,8 @@
               </p>
 
               <p>
-                Exploring how we think, react, endure,
-                and make sense of the world.
+                Exploring how we think, react,
+                endure, and make sense of the world.
               </p>
 
               <div class="book-actions">
@@ -785,7 +829,8 @@
 
                 <a
                   class="btn secondary"
-                  href="#"
+                  href="https://www.lulu.com/shop/omer-manas/idioms-atlas-volume-1/paperback/product-7kd2ykp.html?page=1&pageSize=4"
+                  target="_blank"
                 >
                   Buy on Lulu
                 </a>
@@ -849,7 +894,8 @@
 
                 <a
                   class="btn secondary"
-                  href="#"
+                  href="https://www.lulu.com/shop/omer-manas/idioms-atlas-volume-2/paperback/product-57d52zp.html?page=1&pageSize=4"
+                  target="_blank"
                 >
                   Buy on Lulu
                 </a>
