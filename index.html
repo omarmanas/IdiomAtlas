@@ -120,34 +120,39 @@
       min-height: 680px;
       background:
         linear-gradient(90deg, rgba(5,13,20,0.92), rgba(5,13,20,0.45), rgba(5,13,20,0.35)),
-        url("assets/banner.png") center/cover no-repeat;
+        url("banner.png") center/cover no-repeat;
       color: #fff7e6;
       display: flex;
       align-items: center;
       border-bottom: 1px solid var(--border);
     }
 
-    .hero-content {
-      width: min(680px, 92%);
-      padding: 90px 0;
-    }
+    .hero {
+  position: relative;
+  min-height: 620px;
+  background:
+    linear-gradient(90deg, rgba(4, 12, 18, 0.82) 0%, rgba(4, 12, 18, 0.48) 38%, rgba(4, 12, 18, 0.12) 100%),
+    url("banner.png") center center / cover no-repeat;
+  color: #fff7e6;
+  display: flex;
+  align-items: center;
+  border-bottom: 1px solid var(--border);
+}
 
-    .eyebrow {
-      color: var(--gold-soft);
-      text-transform: uppercase;
-      letter-spacing: 0.18em;
-      font-size: 0.95rem;
-      margin-bottom: 20px;
-    }
+.hero-content {
+  width: min(560px, 92%);
+  padding: 90px 0;
+}
 
-    h1 {
-      font-size: clamp(4rem, 8vw, 7.5rem);
-      line-height: 0.9;
-      letter-spacing: 0.04em;
-      text-transform: uppercase;
-      margin-bottom: 28px;
-      text-shadow: 0 6px 18px rgba(0,0,0,0.45);
-    }
+h1 {
+  font-size: clamp(4.5rem, 8vw, 7.2rem);
+  line-height: 0.9;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  margin-bottom: 26px;
+  color: #f7eedc;
+  text-shadow: 0 8px 24px rgba(0,0,0,0.55);
+}
 
     .divider {
       width: 360px;
@@ -252,7 +257,7 @@
     .books {
       background:
         linear-gradient(rgba(6,23,37,0.94), rgba(6,23,37,0.94)),
-        url("assets/banner.png") center/cover no-repeat;
+        url("banner.png") center/cover no-repeat;
       color: #fff7e6;
     }
 
@@ -452,7 +457,7 @@
   <header>
     <div class="container nav">
       <a class="brand" href="#home">
-        <img src="assets/logo.png" alt="Idioms Atlas logo" />
+        <img src="logo.png" alt="Idioms Atlas logo" />
         <div>
           <div class="brand-title">Idioms Atlas</div>
           <div class="brand-subtitle">Travel the world through words</div>
@@ -490,7 +495,7 @@
 
     <section id="project">
       <div class="container about-grid">
-        <img class="seal" src="assets/logo.png" alt="Idioms Atlas compass seal" />
+        <img class="seal" src="logo.png" alt="Idioms Atlas compass seal" />
 
         <div class="about-text">
           <h2 class="section-title">About the Project</h2>
@@ -591,7 +596,7 @@
 
     <section id="author" class="author-section">
       <div class="container author-grid">
-        <img class="author-photo" src="assets/author-photo.jpg" alt="Omer Manas author photo" />
+        <img class="author-photo" src="author-photo.jpg" alt="Omer Manas author photo" />
 
         <div class="author-text">
           <h2 class="section-title">About the Author</h2>
